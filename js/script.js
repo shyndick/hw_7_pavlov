@@ -19,17 +19,17 @@ let Kettle = function() {
     };
     this.operation = function() {
         this.time = 0.00117 * this.v * (this.t2 - this.t1) / this.p; 
-        this.time2 = this.time * 60;
+        this.timeMin = this.time * 60;
 
         this.result();
     };
     this.result = function() {
         if(this.job === true) {
-            alert('Время закипания чайника: ' + this.time.toFixed(2) + 'ч. или ' + this.time2.toFixed(2) + 'мин.'   );
+            alert('Время закипания чайника: ' + this.time.toFixed(2) + 'ч. или ' + this.timeMin.toFixed(2) + 'мин.'   );
             document.write(`Марка чайника: ${this.name}<br>`);
             document.write(`Мощность чайника: ${this.p} кВт.<br>`);
             document.write(`Объем чайника: ${this.v} Л.<br>`);
-            document.write('Время закипания чайника: ' + this.time.toFixed(2) + 'ч. или ' + this.time2.toFixed(2) + 'мин.');
+            document.write('Время закипания чайника: ' + this.time.toFixed(2) + 'ч. или ' + this.timeMin.toFixed(2) + 'мин.<br>');
 
         } else {
             alert('Чайник выключен');
@@ -44,7 +44,11 @@ let Kettle = function() {
 }
 let kettle = new Kettle();
 kettle.get();
-console.log(kettle)
+console.log(kettle);
+
+// let kettle2 = new Kettle();
+// kettle2.get();
+// console.log(kettle2)
 
 
     //  Автомобиль. Возможные методы: ввод информации об авто (марка, номер), вкл./выкл.
